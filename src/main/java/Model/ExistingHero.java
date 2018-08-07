@@ -23,12 +23,9 @@ public class ExistingHero {
     	//PlayerStats.printstats(hero);
     	Storage.Openfile();
     	
-        try {
-			Storage.readfile();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+       // Storage.getLinesCount();
+		//Storage.ReadLine();
+		Storage.SplitLine();
     	
         Storage.closefile();
     	

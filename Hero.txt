@@ -1,0 +1,7 @@
+Elf,Mtho,0,100,10,30,Sword,Leather jacket
+SuperGirl,gwen,0,100,33,45,Lazer,Gold armor
+Knight,Shado,0,100,30,40,Sword,Sheild
+Wizard,Zama,0,100,40,20,Lazer,Red cape
+Elf,Thami,0,100,10,30,Lazer,Red cape
+Knight,zoro,0,100,30,40,Sword,Sheild
+

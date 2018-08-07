@@ -3,13 +3,34 @@ package main;
 import Model.Storage;
 import artifacts.Armor;
 import artifacts.Weapon;
+import charecters.Elf;
 import charecters.Enemy;
+import charecters.Flash;
 import charecters.Hero;
+import charecters.Knight;
+import charecters.SuperGirl;
+import charecters.Wizard;
 import util.CharacterFactory;
 import view.Map;
 import view.PlayerStats;
 
 public class HeroType {
+	
+	public static String heroTypeToStr(int type) {
+		if (type == 1) {
+			return "Elf";
+		}else if (type == 2) {
+			return "Flash";
+		}else if (type == 3) {
+			return "Knight";
+		}else if (type == 4) {
+			return "SuperGirl";
+		}else if (type == 5) {
+			return "Wizard";
+		}else
+			return null;
+		
+	}
 	
     public static void _type(String name) 
     {
@@ -23,7 +44,9 @@ public class HeroType {
     	System.out.println("6.Exit");
     	heroValue = Keyin.inInt(" Select option : ");
     	
-    	Hero hero = CharacterFactory.newCharacter(name, heroValue);
+    	String type = heroTypeToStr(heroValue);
+    	
+    	Hero hero = CharacterFactory.newCharacter(name, type);
     	Weapon weapon = new Weapon();
     	Armor armor = new Armor();
     	

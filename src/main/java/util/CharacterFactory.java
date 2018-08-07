@@ -9,16 +9,16 @@ import charecters.SuperGirl;
 import charecters.Wizard;
 
 public class CharacterFactory {
-	public static Hero newCharacter(String name, int type) {
-		if (type == 1) {
+	public static Hero newCharacter(String name, String type) {
+		if (type == "Elf") {
 			return new Elf(name);
-		}else if (type == 2) {
+		}else if (type == "Flash") {
 			return new Flash(name);
-		}else if (type == 3) {
+		}else if (type == "Knight") {
 			return new Knight(name);
-		}else if (type == 4) {
+		}else if (type == "SuperGirl") {
 			return new SuperGirl(name);
-		}else if (type == 5) {
+		}else if (type == "Wizard") {
 			return new Wizard(name);
 		}else
 			return null;

@@ -66,7 +66,6 @@ public abstract class Hero extends Character  {
 	
 	public void movePlayer(Hero hero, int item) {
 		Map map = new Map(); 
-		boolean isSpaceOpen = true;
 		
 		int maxXBoardSpace = map.ft_board_len_x();
 		int maxYBoardSpace = map.ft_board_len_y();
@@ -77,70 +76,56 @@ public abstract class Hero extends Character  {
 
 			if (item == 1)
 			{
-				
-				System.out.println(map.ft_fetch_from_map(xposition, yposition - 1));
-				System.out.println(map.ft_fetch_from_map(xposition, yposition - 2));
-				System.out.println(map.ft_fetch_from_map(xposition, yposition - 3));
-				System.out.println(map.ft_fetch_from_map(xposition, yposition - 4));
-				
-				System.out.println("UPPPPP");
-				//yposition = yposition - 1;
-//				if (map.ft_fetch_from_map(xposition, yposition - 1) != '*') {
-//					yposition = yposition - 1;
-//					System.out.println("You Have came across an Enemy 1");
-//				}
-//				else if ((yposition - 1) > 0)
-//					yposition = yposition - 1;
-//				
-//				else {
-//					yposition = yposition - 1;
-//					System.out.println("You Have Won!");
-//				}
+				if ((yposition - 1) > 0)
+				{
+					if (map.ft_fetch_from_map(xposition, yposition - 1) != '*')
+						System.out.println("You Have came across an Enemy 1");
+					yposition = yposition - 1;
+				}
+				else {
+					yposition = yposition - 1;
+					System.out.println("You Have Won!");
+				}
 			}
 			else if (item == 2)
 			{
-				System.out.print(map.ft_fetch_from_map(xposition + 1, yposition));
-				System.out.print(map.ft_fetch_from_map(xposition + 2, yposition));
-				System.out.print(map.ft_fetch_from_map(xposition + 3, yposition));
-				System.out.println(map.ft_fetch_from_map(xposition + 4, yposition));
-				//xposition = xposition + 1;
-//				if ((xposition + 1) <= maxXBoardSpace)
-//					xposition = xposition + 1;
-//				else if (xposition != '*') {
-//					System.out.println("You Have came across an Enemy 2");
-//				}
-//				else
-//					System.out.println("You Have Won!");
+				
+				if ((xposition + 1) < maxXBoardSpace)
+				{
+					if (map.ft_fetch_from_map(xposition + 1, yposition) != '*')
+						System.out.println("You Have came across an Enemy 2");
+					xposition = xposition + 1;
+				}
+				else{
+					xposition = xposition + 1;
+					System.out.println("You Have Won!");
+				}
 			}
 			else if (item == 3)
 			{
-				System.out.println(map.ft_fetch_from_map(xposition, yposition + 1));
-				System.out.println(map.ft_fetch_from_map(xposition, yposition + 2));
-				System.out.println(map.ft_fetch_from_map(xposition, yposition + 3));
-				System.out.println(map.ft_fetch_from_map(xposition, yposition + 4));
-				//yposition = yposition + 1;
-//				if ((yposition + 1) <= maxYBoardSpace)
-//					yposition = yposition + 1;
-//				else if (yposition != '*') {
-//					System.out.println("You Have came across an Enemy 3");
-//				}
-//				else
-//					System.out.println("You Have Won!");
+				if ((yposition + 1) < maxYBoardSpace)
+				{
+					if (map.ft_fetch_from_map(xposition, yposition + 1) != '*')
+						System.out.println("You Have came across an Enemy 3");
+					yposition = yposition + 1;
+				}	
+				else {
+					yposition = yposition + 1;
+					System.out.println("You Have Won!");	
+				}
 			}
 			else if (item == 4)
 			{
-				System.out.print(map.ft_fetch_from_map(xposition - 1, yposition));
-				System.out.print(map.ft_fetch_from_map(xposition - 2, yposition));
-				System.out.print(map.ft_fetch_from_map(xposition - 3, yposition));
-				System.out.print(map.ft_fetch_from_map(xposition - 4, yposition));
-				//xposition = xposition - 1;
-//				if ((xposition - 1) >= 0)
-//					xposition = xposition - 1;
-//				else if (xposition != '*') {
-//					System.out.println("You Have came across an Enemy 3");
-//				}
-//				else
-//					System.out.println("You Have Won!");
+				if ((xposition - 1) > 0)
+				{
+					if (map.ft_fetch_from_map(xposition - 1, yposition) != '*')
+						System.out.println("You Have came across an Enemy 4");
+					xposition = xposition - 1;
+				}
+				else {
+					xposition = xposition - 1;
+					System.out.println("You Have Won!");	
+				}
 			}
 			map.updateMap(xposition, yposition, PlayerChar);
 			
