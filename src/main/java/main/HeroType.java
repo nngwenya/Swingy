@@ -1,17 +1,17 @@
 package main;
 
-import Model.Storage;
+import model.Storage;
 import artifacts.Armor;
 import artifacts.Weapon;
-import charecters.Elf;
-import charecters.Enemy;
-import charecters.Flash;
-import charecters.Hero;
-import charecters.Knight;
-import charecters.SuperGirl;
-import charecters.Wizard;
+import model.Elf;
+import model.Enemy;
+import model.Flash;
+import model.Hero;
+import model.Knight;
+import model.SuperGirl;
+import model.Wizard;
 import util.CharacterFactory;
-import view.Map;
+import view.*;
 import view.PlayerStats;
 
 public class HeroType {
@@ -48,7 +48,7 @@ public class HeroType {
     	
     	Hero hero = CharacterFactory.newCharacter(name, type);
     	Weapon weapon = new Weapon();
-    	Armor armor = new Armor();
+		Armor armor = new Armor();
     	
     	if (heroValue == 6) {
     		System.exit(0);
@@ -69,33 +69,8 @@ public class HeroType {
     	
     	switch (select) {
     	case 1:
-    		System.out.println("\n##########START GAME###########\n");
-    		Map.buildMap();
-    		char[][] temp = new char[10][10];
-    		
-    		Enemy[] enemy = new Enemy[4];
-    	
-    		
-    		for (int i = 0; i < 4; i++) {
-    			enemy[i] = new Enemy(10,5,30,"zombie");
-    			
-    		}
-    		hero.player();
-    		
-    		while (true)
-    		{
-    			Map.redrawMap();
-        		int move;
-            	System.out.println("\n");
-            	System.out.println("1.North");
-            	System.out.println("2.East");
-            	System.out.println("3.South");
-            	System.out.println("4.West");
-            	move = Keyin.inInt("Select option : ");
-            	
-            	hero.movePlayer(hero, move);
-    			
-    		}
+			System.out.println("\n##########START GAME###########\n");
+			Level.levelUp(hero);
         	
     	case 2:
     		System.exit(0);

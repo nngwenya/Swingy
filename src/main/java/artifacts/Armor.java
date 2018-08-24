@@ -2,7 +2,7 @@ package artifacts;
 
 import java.util.Random;
 
-import charecters.Hero;
+import model.Hero;
 
 public class Armor {
 	public static Armor armor = new Armor();

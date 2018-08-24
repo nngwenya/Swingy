@@ -1,10 +1,15 @@
 package view;
 
 import java.util.Arrays;
+import model.*;
 
 public class Map {
+
 	
 	static char[][] battleBoard = new char[9][9];
+	// public int x = (Hero.getLevel() - 1 )*5+10-( Hero.getLevel() % 2 );
+	// public int y = (Hero.getLevel() - 1 )*5+10-( Hero.getLevel() % 2 );
+
 	
 	public char ft_fetch_from_map(int x, int y)
 	{

@@ -1,6 +1,6 @@
 package view;
 
-import charecters.Hero;
+import model.Hero;
 
 public interface WindowManager {
 	void showSelectHero();

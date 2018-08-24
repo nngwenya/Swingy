@@ -2,7 +2,7 @@ package view;
 
 import artifacts.Armor;
 import artifacts.Weapon;
-import charecters.Hero;
+import model.Hero;
 
 public class PlayerStats {
 	

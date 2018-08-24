@@ -2,7 +2,7 @@ package view;
 
 import java.io.IOException;
 
-import charecters.Hero;
+import model.Hero;
 
 public class StartGame implements WindowManager {
 

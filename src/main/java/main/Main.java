@@ -1,21 +1,25 @@
 package main;
-//import javax.swing.*;
-
 import main.*;
-import view.Colours.*;
+//import view.Colours;
 import view.NewHero;
+//import view.Simulation;
+import view.StartGame;
 
 import java.util.Scanner;
 
-import Model.ExistingHero;
+import javax.swing.text.View;
+
+import model.ExistingHero;
+import model.Enemy;
+import model.Hero;
 import controller.Graphic;  
 public class Main {
 	
 	 private static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) { 
 	
-	int swValue;
-    System.out.println( "   MAIN MENU FOR SWINGY    \n");
+    int swValue;
+    System.out.println("   MAIN MENU FOR SWINGY    \n" );
     System.out.println("1. Create a new Hero");
     System.out.println("2. Select from existing Hero's");
     System.out.println("3. Play on GUI");
@@ -30,22 +34,25 @@ public class Main {
     	 Scanner scanner = new Scanner(System.in);
     	    System.out.print("Enter Name : ");
     	    
-    	    String name = scanner.nextLine(); 
+          String name = scanner.nextLine(); 
+          
+          if (name  == null){
+            System.out.println("This field can not be left empty");
+          }else{
+            HeroType._type(name);
+          }
     	  
-    	    HeroType._type(name);
+    	    
       break;
     case 2:
     	System.out.println("\n##########SELECT FROM EXISTING HERO'S###########\n");
     	
-//   	 	Scanner scann = new Scanner(System.in);
-//   	 		System.out.print("Enter Name : ");
-//   	    
-//   	 		String player = scann.nextLine(); 
+
    	  
-   	 		ExistingHero._typeofHero();
+   	 		model.ExistingHero._typeofHero();
       break;
     case 3:
-    	new Graphic();
+    Graphic.startnow();
       break;
     case 4:
     	System.exit(0);
@@ -57,4 +64,6 @@ public class Main {
     
 
 	} 
+	
+	
 }

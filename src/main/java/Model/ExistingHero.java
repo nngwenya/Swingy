@@ -1,14 +1,15 @@
-package Model;
+package model;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import artifacts.Armor;
 import artifacts.Weapon;
-import charecters.Enemy;
-import charecters.Hero;
+
 import main.Keyin;
 import util.CharacterFactory;
-import view.Map;
+import view.*;
+import model.*;
 import view.PlayerStats;
 
 public class ExistingHero {
@@ -16,63 +17,47 @@ public class ExistingHero {
 	public static void _typeofHero() 
     {
  	
-    	Hero hero = null; 
+    
     	Weapon weapon = new Weapon();
     	Armor armor = new Armor();
     	
-    	//PlayerStats.printstats(hero);
+    	
     	Storage.Openfile();
+		List<String[]> heroList = Storage.getHeroList();
+		int index = 1;
     	
-       // Storage.getLinesCount();
-		//Storage.ReadLine();
-		Storage.SplitLine();
-    	
-        Storage.closefile();
-    	
-    	int select;
-    	System.out.println("\n");
-    	System.out.println("1.Start Game");
-    	System.out.println("2.Exit");
-    	select = Keyin.inInt("Select option : ");
-    	
-    	switch (select) {
-    	case 1:
-    		System.out.println("\n##########START GAME###########\n");
-    		Map.buildMap();
-    		char[][] temp = new char[10][10];
-    		
-    		Enemy[] enemy = new Enemy[4];
-    	
-    		
-    		for (int i = 0; i < 4; i++) {
-    			enemy[i] = new Enemy(10,5,30,"zombie");
-    			
-    		}
-    		hero.player();
-    		
-    		while (true)
-    		{
-    			Map.redrawMap();
-        		int move;
-            	System.out.println("\n");
-            	System.out.println("1.North");
-            	System.out.println("2.East");
-            	System.out.println("3.South");
-            	System.out.println("4.West");
-            	move = Keyin.inInt("Select option : ");
-            	
-            	hero.movePlayer(hero, move);
-    			
-    		}
-        	
-    	case 2:
-    		break;
-    	default:
-    	    System.out.println("Invalid selection");
-    	    break; 
-    	}
+    	for(String[] heroStat: heroList) {
+			System.out.println(index + ". " + heroStat[1]);
+			index++;	
     	}
     	
-    
+    int selectHero;
+    selectHero = Keyin.inInt("Select option : ");
+    selectHero--;
 
+	String[] heroStat = heroList.get(selectHero);
+	
+    Storage.closefile();
+	
+    Hero hero = CharacterFactory.newCharacter(heroStat[1].trim(), heroStat[0].trim());
+	
+   	int select;
+   	System.out.println("\n");
+   	System.out.println("1.Start Game");
+   	System.out.println("2.Exit");
+   	select = Keyin.inInt("Select option : ");
+   	
+   	switch (select) {
+   	case 1:
+		   System.out.println("\n##########START GAME###########\n");
+		   Level.levelUp(hero);
+       	
+   	case 2:
+   		break;
+   	default:
+   	    System.out.println("Invalid selection");
+   	    break; 
+   	}
+    }
+    	
 }
