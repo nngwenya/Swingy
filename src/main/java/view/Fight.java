@@ -1,7 +1,7 @@
 package view;
 
 import model.*;
-import main.*;
+import controller.*;
 import util.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,5 +29,7 @@ public class Fight{
             System.out.println("Invalid entery!!");
 
     }
+
+    
 
 }

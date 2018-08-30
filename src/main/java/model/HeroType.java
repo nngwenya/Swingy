@@ -1,4 +1,4 @@
-package main;
+package model;
 
 import model.Storage;
 import artifacts.Armor;
@@ -13,6 +13,7 @@ import model.Wizard;
 import util.CharacterFactory;
 import view.*;
 import view.PlayerStats;
+import controller.*;
 
 public class HeroType {
 	

@@ -2,6 +2,9 @@ Flash,Thami,6,100,90,40,Bomb,Red cape
 Elf,Gwen,2,100,10,30,Bomb,Gold armor
 Wizard,Shado,4,100,40,20,Bomb,Sheild
 Flash,Zodwa,0,100,60,40,Bomb,Sheild
-Flash,Noma,0,100,60,40,Gun,SheildFlash,Babe,0,100,60,40,Sword,Gold armor
+Flash,Noma,0,100,60,40,Gun,Sheild
 Flash,Babe,0,100,60,40,Sword,Leather jacket
 Flash,Boo,0,100,60,40,Lazer,Gold armor
+Elf,Tshepang,2,100,10,30,Sword,Leather jacket
+Knight,Handsome,0,100,30,40,Bomb,Gold armor
+Flash,liam,4,100,60,40,Bomb,Red cape

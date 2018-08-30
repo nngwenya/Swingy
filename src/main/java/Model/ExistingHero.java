@@ -6,7 +6,7 @@ import java.util.List;
 import artifacts.Armor;
 import artifacts.Weapon;
 
-import main.Keyin;
+//import controller.Keyin;
 import util.CharacterFactory;
 import view.*;
 import model.*;

@@ -10,7 +10,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import main.Keyin;
+import model.*;
 import util.*;
 import view.*;
 

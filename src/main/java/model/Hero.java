@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 
 import artifacts.Armor;
 import artifacts.Weapon;
-import main.Keyin;
+import model.*;
 import view.Map;
 import view.Simulation;
 import view.*;
@@ -24,8 +24,8 @@ public abstract class Hero extends Character  {
 	protected int level;
 	protected int experience;
 	private String type;
-	protected int xposition;
-	protected int yposition;
+	public int xposition;
+	public int yposition;
 	protected int movement;
 	public int getMovement() {
 		return movement;

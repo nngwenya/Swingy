@@ -1,7 +1,7 @@
 package view;
 
 import model.*;
-import main.*;
+import controller.*;
 
 public class Level{
 
